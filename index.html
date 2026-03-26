@@ -38,33 +38,33 @@
   <section class="hero" id="home">
     <div class="hero-text">
       <h1 id="typewriter"></h1>
-      <script>
-        const text = "MY PORTFOLIO";
+      <script> const text = "MY PORTFOLIO";
         const typewriter = document.getElementById('typewriter');
         let i = 0;
         let forward = true;
 
         function animate() {
           if (forward) {
-            if (i <= text.length) {
-              typewriter.textContent = text.slice(0, i);
+            typewriter.textContent = text.slice(0, i);
+            if (i < text.length) {
               i++;
-              setTimeout(animate, 120);
+              setTimeout(animate, 110);
             } else {
               forward = false;
-              setTimeout(animate, 900);
+              setTimeout(animate, 1800);
             }
           } else {
-            if (i >= 0) {
-              typewriter.textContent = text.slice(0, i);
+            typewriter.textContent = text.slice(0, i);
+            if (i > 0) {
               i--;
-              setTimeout(animate, 60);
+              setTimeout(animate, 55);
             } else {
               forward = true;
-              setTimeout(animate, 500);
+              setTimeout(animate, 600);
             }
           }
         }
+
         animate();
       </script>
 
@@ -85,24 +85,7 @@
       <img src="upload/unnamed.jpg" alt="Profile Photo">
     </div>
 
-    <script>
-      const slider = document.getElementById("heroSlider");
-      let scrollAmount = 0;
 
-      function autoSlide() {
-        if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
-          scrollAmount = 0; // รีเซ็ตกลับไปจุดเริ่มต้น
-        } else {
-          scrollAmount += 340; // ขยับตามขนาดรูป
-        }
-        slider.scrollTo({
-          left: scrollAmount,
-          behavior: "smooth"
-        });
-      }
-
-      setInterval(autoSlide, 4000); // 4 วินาทีเลื่อนที
-    </script>
   </section>
 
   <section class="about" id="about">
@@ -122,8 +105,8 @@
 
           function aboutAnimate() {
             if (aboutForward) {
-              if (aboutIndex <= aboutText.length) {
-                aboutTypewriter.textContent = aboutText.slice(0, aboutIndex);
+              aboutTypewriter.textContent = aboutText.slice(0, aboutIndex);
+              if (aboutIndex < aboutText.length) {
                 aboutIndex++;
                 setTimeout(aboutAnimate, 300);
               } else {
@@ -131,10 +114,10 @@
                 setTimeout(aboutAnimate, 900);
               }
             } else {
-              if (aboutIndex >= 0) {
-                aboutTypewriter.textContent = aboutText.slice(0, aboutIndex);
+              aboutTypewriter.textContent = aboutText.slice(0, aboutIndex);
+              if (aboutIndex > 0) {
                 aboutIndex--;
-                setTimeout(aboutAnimate, 300);
+                setTimeout(aboutAnimate, 150);
               } else {
                 aboutForward = true;
                 setTimeout(aboutAnimate, 1000);
@@ -266,7 +249,8 @@
     <h2>ใบเกียรติบัตร &amp; รางวัล</h2>
     <div class="certificates-grid">
       <!-- Certificate Card Template -->
-      <div class="certificate-card" onclick="openModal('modal1', 'certificate/Screenshot 2025-08-18 095856.png', 'ใบเกียรติบัตร 1')">
+      <div class="certificate-card"
+        onclick="openModal('modal1', 'certificate/Screenshot 2025-08-18 095856.png', 'ใบเกียรติบัตร 1')">
         <img class="certificate-image" src="certificate/Screenshot 2025-08-18 095856.png" alt="ใบเกียรติบัตร 1">
         <div class="certificate-info">
           <h3>ใบเกียรติบัตร 1</h3>
@@ -274,7 +258,8 @@
         </div>
       </div>
 
-      <div class="certificate-card" onclick="openModal('modal2', 'certificate/Screenshot 2025-08-18 095929.png', 'ใบเกียรติบัตร 2')">
+      <div class="certificate-card"
+        onclick="openModal('modal2', 'certificate/Screenshot 2025-08-18 095929.png', 'ใบเกียรติบัตร 2')">
         <img class="certificate-image" src="certificate/Screenshot 2025-08-18 095929.png" alt="ใบเกียรติบัตร 2">
         <div class="certificate-info">
           <h3>ใบเกียรติบัตร 2</h3>
@@ -291,7 +276,7 @@
         <p>คลิกเพื่อดูรายละเอียดใบเกียรติบัตรแบบเต็ม</p>
       </div>
 
-  
+
       <div class="certificate-card">
         <div class="certificate-image"
           onclick="openModal('modal4', 'certificate/Screenshot 2025-08-18 100003.png', 'ใบเกียรติบัตร 4')">
@@ -311,7 +296,8 @@
       </div>
 
       <div class="certificate-card">
-        <div class="certificate-image" onclick="openModal('modal6', 'certificate/Screenshot 2025-08-20 142614.png', 'ใบเกียรติบัตร 6')">
+        <div class="certificate-image"
+          onclick="openModal('modal6', 'certificate/Screenshot 2025-08-20 142614.png', 'ใบเกียรติบัตร 6')">
           <img src="certificate/Screenshot 2025-08-20 142614.png" alt="ใบเกียรติบัตร 6">
         </div>
         <h3>ใบเกียรติบัตร 6</h3>
@@ -319,7 +305,8 @@
       </div>
 
       <div class="certificate-card">
-        <div class="certificate-image" onclick="openModal('modal7', 'certificate/91e961e4-8f3a-4cb2-a86c-06a90c5d2387.png', 'ใบเกียรติบัตร 7')">
+        <div class="certificate-image"
+          onclick="openModal('modal7', 'certificate/91e961e4-8f3a-4cb2-a86c-06a90c5d2387.png', 'ใบเกียรติบัตร 7')">
           <img src="certificate/91e961e4-8f3a-4cb2-a86c-06a90c5d2387.png" alt="ใบเกียรติบัตร 7">
         </div>
         <h3>ใบเกียรติบัตร 7</h3>
@@ -327,26 +314,34 @@
       </div>
 
       <div class="certificate-card">
-        <div class="certificate-image" onclick="openModal('modal8', 'certificate/cert8.jpg', 'ใบเกียรติบัตร 8')">
-          <img src="certificate/cert8.jpg" alt="ใบเกียรติบัตร 8">
+        <div class="certificate-image" onclick="openModal('modal8', 'certificate/1.png', 'ใบเกียรติบัตร 8')">
+          <img src="certificate/1.png" alt="ใบเกียรติบัตร 8">
         </div>
         <h3>ใบเกียรติบัตร 8</h3>
         <p>คลิกเพื่อดูรายละเอียดใบเกียรติบัตรแบบเต็ม</p>
       </div>
 
       <div class="certificate-card">
-        <div class="certificate-image" onclick="openModal('modal9', 'certificate/cert9.jpg', 'ใบเกียรติบัตร 9')">
-          <img src="certificate/cert9.jpg" alt="ใบเกียรติบัตร 9">
+        <div class="certificate-image" onclick="openModal('modal9', 'certificate/2.png', 'ใบเกียรติบัตร 9')">
+          <img src="certificate/2.png" alt="ใบเกียรติบัตร 9">
         </div>
         <h3>ใบเกียรติบัตร 9</h3>
         <p>คลิกเพื่อดูรายละเอียดใบเกียรติบัตรแบบเต็ม</p>
       </div>
 
       <div class="certificate-card">
-        <div class="certificate-image" onclick="openModal('modal10', 'certificate/cert10.jpg', 'ใบเกียรติบัตร 10')">
-          <img src="certificate/cert10.jpg" alt="ใบเกียรติบัตร 10">
+        <div class="certificate-image" onclick="openModal('modal10', 'certificate/3.png', 'ใบเกียรติบัตร 10')">
+          <img src="certificate/3.png" alt="ใบเกียรติบัตร 10">
         </div>
         <h3>ใบเกียรติบัตร 10</h3>
+        <p>คลิกเพื่อดูรายละเอียดใบเกียรติบัตรแบบเต็ม</p>
+      </div>
+
+      <div class="certificate-card">
+        <div class="certificate-image" onclick="openModal('modal10', 'certificate/4.png', 'ใบเกียรติบัตร 11')">
+          <img src="certificate/4.png" alt="ใบเกียรติบัตร 11">
+        </div>
+        <h3>ใบเกียรติบัตร 11</h3>
         <p>คลิกเพื่อดูรายละเอียดใบเกียรติบัตรแบบเต็ม</p>
       </div>
     </div>
@@ -365,47 +360,36 @@
   </section>
 
   <script>
-    function openModal(modalId, imageSrc, title) {
-      const modal = document.getElementById('imageModal');
-      const modalImage = document.getElementById('modalImage');
-      const modalTitle = document.getElementById('modalTitle');
+    const slider = document.getElementById("heroSlider");
+    let currentIndex = 0;
 
-      modalImage.src = imageSrc;
-      modalTitle.textContent = title;
-      modal.style.display = 'block';
-
-      // เพิ่ม animation
-      setTimeout(() => {
-        modal.style.opacity = '1';
-      }, 10);
+    function getItemWidth() {
+      const firstItem = slider.children[0];
+      if (!firstItem) return 340;
+      const style = window.getComputedStyle(firstItem);
+      const marginRight = parseFloat(style.marginRight) || 0;
+      return firstItem.offsetWidth + marginRight;
     }
 
-    function closeModal() {
-      const modal = document.getElementById('imageModal');
-      modal.style.display = 'none';
-    }
+    function autoSlide() {
+      const itemWidth = getItemWidth();
+      const maxIndex = slider.children.length - 1;
 
-    // ปิด modal เมื่อคลิกพื้นหลัง
-    window.onclick = function (event) {
-      const modal = document.getElementById('imageModal');
-      if (event.target === modal) {
-        closeModal();
+      if (currentIndex >= maxIndex) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
       }
+
+      slider.scrollTo({
+        left: currentIndex * itemWidth,
+        behavior: "smooth"
+      });
     }
 
-    // ปิด modal เมื่อกด ESC
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        closeModal();
-      }
-    });
-
-    // Theme toggle function (placeholder)
-    function toggleTheme() {
-      // Add your dark mode toggle logic here
-      console.log('Theme toggle clicked');
-    }
+    setInterval(autoSlide, 4000);
   </script>
+
 
 </body>
 
